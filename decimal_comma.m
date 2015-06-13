@@ -1,4 +1,4 @@
-function [ output_args ] = decimal_comma( axis_handle, axis_name, varargin )
+function decimal_comma(axis_handle, axis_name, varargin)
 %DECIMAL_COMMA - decimal comma in a plot
 %
 %   A simple function to replace decimal points with decimal commas (which
