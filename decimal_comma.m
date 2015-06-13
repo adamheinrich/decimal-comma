@@ -25,13 +25,16 @@ function decimal_comma(axis_handle, axis_name, varargin)
             
         case {'X', 'Y'}
             tick = get(axis_handle, strcat(axis_name, 'Tick'));
-            
             n = length(tick);
+            
             labels = cell(1,n);
             for i = 1:n
                 label = num2str(tick(i), varargin{:});
                 labels{i} = strrep(label, '.', ',');
             end
+            
+            labels{1} = '';
+            labels{n} = '';
 
             set(axis_handle, strcat(axis_name, 'TickLabel'), labels);
             
