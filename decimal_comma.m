@@ -1,5 +1,5 @@
 function decimal_comma(axis_handle, axis_name, varargin)
-%DECIMAL_COMMA - decimal comma in a plot
+%DECIMAL_COMMA - decimal comma in 2-D plot
 %
 %   A simple function to replace decimal points with decimal commas (which
 %   are usual in Europe) in Matlab or Octave plots.
