@@ -4,13 +4,13 @@ A simple function to replace decimal points with decimal commas (which are usual
 ## Usage
 The function has to be called after displaying a graph (see [PLOT][1] for details). It accepts two sets of arguments:
 
- * Change decimal point to decimal comma in a plot (use gca for current axes handle and one of 'X', 'Y' or 'XY' for axis_name):
+    decimal_comma(axis_handle, axis_name)
+    
+Changes decimal point to decimal comma in a plot. Use gca for current axes handle and one of 'X', 'Y' or 'XY' for axis_name.
 
-        decimal_comma(axis_handle, axis_name)
+    decimal_comma(axis_handle, axis_name, formatstr)
 
- * Change decimal point to decimal comma in a plot with specified number format (see [SPRINTF][1] for details):
-
-        decimal_comma(axis_handle, axis_name, formatstr)
+Changes decimal point to decimal comma in a plot with specified number format (see [SPRINTF][1] for details).
 
 ## Example code
     x = -1:0.1:1;
