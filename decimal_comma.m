@@ -1,5 +1,5 @@
 function [ output_args ] = decimal_comma( axis_handle, axis_name, varargin )
-%DECIMAL_COMMA changes decimal point to comma in a plot
+% DECIMAL_COMMA changes decimal point to comma in a plot
 %   DECIMAL_COMMA(axis_handle, axis_name) changes decimal point to decimal
 %   comma in a plot. Use gca for current axes handle and one of 'X', 'Y' or
 %   'XY' for axis_name.
@@ -7,6 +7,9 @@ function [ output_args ] = decimal_comma( axis_handle, axis_name, varargin )
 %   DECIMAL_COMMA(axis_handle, axis_name, formatstr) changes decimal point 
 %   to decimal comma in a plot. Number format is specified by formatstr 
 %   (see SPRINTF for details).   
+
+% (c) 2012 Adam Heinrich <adam@adamh.cz>. Published under the MIT license.
+
     if nargin < 2 || nargin > 3
         error('Wrong number of input parameters.');
     end;
