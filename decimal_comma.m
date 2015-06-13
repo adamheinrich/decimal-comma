@@ -10,17 +10,18 @@ function [ output_args ] = decimal_comma( axis_handle, axis_name, varargin )
 
 % (c) 2012 Adam Heinrich <adam@adamh.cz>. Published under the MIT license.
 
-    if nargin < 2 || nargin > 3
+    if (nargin < 2 || nargin > 3)
         error('Wrong number of input parameters.');
-    end;
+    end
 
     switch axis_name
         case 'XY'
             decimal_comma(axis_handle, 'X', varargin{:});
             decimal_comma(axis_handle, 'Y', varargin{:});
+            
         case {'X', 'Y'}
             tick = get(axis_handle, strcat(axis_name, 'Tick'));
-           
+            
             label = '';
             for i = 1:length(tick)
                 label = [label num2str(tick(i), varargin{:}) '|'];
@@ -28,7 +29,8 @@ function [ output_args ] = decimal_comma( axis_handle, axis_name, varargin )
             
             label = strrep(label, '.', ','); 
             set(axis_handle,  strcat(axis_name, 'TickLabel'), label);
+            
         otherwise
             error('Wrong axis name! Use one of X, Y or XY.');
-    end;
+    end
 end
