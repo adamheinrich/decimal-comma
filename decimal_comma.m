@@ -26,13 +26,14 @@ function decimal_comma(axis_handle, axis_name, varargin)
         case {'X', 'Y'}
             tick = get(axis_handle, strcat(axis_name, 'Tick'));
             
-            label = '';
-            for i = 1:length(tick)
-                label = [label num2str(tick(i), varargin{:}) '|'];
+            n = length(tick);
+            labels = cell(1,n);
+            for i = 1:n
+                label = num2str(tick(i), varargin{:});
+                labels{i} = strrep(label, '.', ',');
             end
-            
-            label = strrep(label, '.', ','); 
-            set(axis_handle,  strcat(axis_name, 'TickLabel'), label);
+
+            set(axis_handle, strcat(axis_name, 'TickLabel'), labels);
             
         otherwise
             error('Wrong axis name! Use one of X, Y or XY.');
